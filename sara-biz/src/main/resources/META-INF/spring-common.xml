@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+ 	<!-- 出款通知队列 -->
+    <!-- <bean id="bmpsDrawNotifyQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="${jms.queue.bacs.bmpsdrawnotify}" />
+    </bean> -->
+    
+    <!-- 异步记账 -->
+    <!-- <bean id="protocolDrawAction" class="com.somnus.smart.biz.draw.action.ProtocolDrawAction" parent="parentMessageListener"/> -->
+    
+    <!-- <bean id="protocolDrawMessageContainer" parent="parentListenerContainer">
+        <property name="destination" ref="bmpsDrawNotifyQueue"/>
+        <property name="messageListener" ref="protocolDrawAction"/>
+    </bean> -->
+    
+    <!-- 调用其它服务 -->
+     <!-- 基础应用平台-退款服务 -->
+	<!-- <bean id="refundResource" class="com.somnus.rest.core.spring.RestfulFactoryBean">
+        <property name="serviceInterface" value="com.somnus.core.psfp.refund.biz.refund.resource.RefundResource" /> 
+        <property name="serviceUrl" value="${refund.interface.url}" />
+	</bean> -->
+	
+</beans> 
