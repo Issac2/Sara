@@ -1,4 +1,4 @@
-package org.sara.service.api;
+package com.somnus.sara.message;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
