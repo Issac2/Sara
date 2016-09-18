@@ -56,11 +56,10 @@ public class ValidationInterceptor {
         return result;
     }
 
-    @SuppressWarnings({"rawtypes" })
     private Message exceptionHandle(Throwable throwable,Message message){
         if(throwable instanceof ValidationException){
             if(throwable instanceof MethodConstraintViolationException){
-                for (ConstraintViolation constraintViolation : ((MethodConstraintViolationException)throwable).getConstraintViolations()) {
+                for (ConstraintViolation<?> constraintViolation : ((MethodConstraintViolationException)throwable).getConstraintViolations()) {
                     /*IncomeResourceImpl#bankIncome(arg0).feeWay*/
                 	String path = constraintViolation.getPropertyPath().toString();
                     int index = path.indexOf('.');
