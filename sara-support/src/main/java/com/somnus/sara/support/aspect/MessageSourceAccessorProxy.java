@@ -31,7 +31,6 @@ public class MessageSourceAccessorProxy {
 		enhancer.setCallback(new MessageSourceHandler());
 		return (MessageSourceAccessor)enhancer.create(
 				new Class[]{MessageSource.class}, new Object[]{messageSource});
-		
 	}
 
     /**

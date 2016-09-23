@@ -22,30 +22,32 @@ import com.somnus.sara.support.common.MsgCodeList;
 import com.somnus.sara.support.exceptions.BizException;
 
 @Service
-public class MerAccountServiceImpl implements MerAccountService{
-	
-	private transient Logger log = LoggerFactory.getLogger(this.getClass());
-	
+public class MerAccountServiceImpl implements MerAccountService {
+
+	private transient Logger		log = LoggerFactory.getLogger(this.getClass());
+
 	@Autowired
-	private MerAccountDao merAccountDao;
-	
+	private MerAccountDao			merAccountDao;
+
 	@Autowired
-	private MessageSourceAccessor msa;
-	
+	private MessageSourceAccessor	msa;
+
 	@Override
-	public MerAccountQueryResponse selectByAcctcode(MerAccountQueryRequest request) {
-		
+	public MerAccountQueryResponse selectByAcctcode(
+			MerAccountQueryRequest request) {
+
 		MerAccountQueryResponse response = new MerAccountQueryResponse();
-		
-		PageList<MerAccount> pagelist = merAccountDao.selectByAcctcode(request.getAcctCode(), 
-				new PageBounds(request.getPageNum(),request.getPageSize()));
-		
-		if(pagelist == null) {
-			throw new BizException(msa.getMessage(MsgCodeList.ERROR_505002, 
-					new Object[]{request.getAcctCode()}));
+
+		PageList<MerAccount> pagelist = merAccountDao.selectByAcctcode(request
+				.getAcctCode(),
+				new PageBounds(request.getPageNum(), request.getPageSize()));
+
+		if (pagelist == null) {
+			throw new BizException(msa.getMessage(MsgCodeList.ERROR_505002,
+					new Object[] { request.getAcctCode() }));
 		}
-		
-		int total = pagelist.getPaginator().getTotalCount();//总记录数
+
+		int total = pagelist.getPaginator().getTotalCount();// 总记录数
 		response.setPageNum(request.getPageNum());
 		response.setPageSize(request.getPageSize());
 		response.setRowCount(total);
@@ -68,7 +70,7 @@ public class MerAccountServiceImpl implements MerAccountService{
 		// 新增交易账户
 		MerAccount meraccount = new MerAccount();
 		PropertyUtils.copyProperties(meraccount, request);
-		
+
 		merAccountDao.insert(meraccount);
 	}
 

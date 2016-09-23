@@ -10,8 +10,8 @@ import com.somnus.sara.message.sample.MeracctRequest;
 
 @WebService
 public interface MerAccountWebservice {
-	
+
 	MerAccountQueryResponse selectByAcctcode(@Valid MerAccountQueryRequest request);
-	
+
 	Message createMeracct(@Valid MeracctRequest request);
 }

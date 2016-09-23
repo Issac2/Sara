@@ -29,6 +29,5 @@ public class LoggingProcessFilter extends OncePerRequestFilter {
 		} finally {
 			MDC.clear();
 		}
-
 	}
 }
