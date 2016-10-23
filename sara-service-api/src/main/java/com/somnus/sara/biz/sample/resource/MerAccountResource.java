@@ -8,8 +8,8 @@ import com.somnus.sara.message.sample.MerAccountQueryResponse;
 import com.somnus.sara.message.sample.MeracctRequest;
 
 public interface MerAccountResource {
-	
+
 	MerAccountQueryResponse selectByAcctcode(@Valid MerAccountQueryRequest request);
-	
+
 	Message createMeracct(@Valid MeracctRequest request);
 }
