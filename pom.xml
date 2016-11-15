@@ -78,6 +78,7 @@
 
 		<!-- Plugins -->
 		<compiler.plugin.version>3.5.1</compiler.plugin.version>
+		<!-- 目前推荐使用2.3版本，3.0会莫名其妙的pom报错 -->
 		<source.plugin.version>2.3</source.plugin.version>
 		<war.plugin.version>2.3</war.plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
