@@ -12,10 +12,9 @@
 		<module>sara-service-api</module>
 		<module>sara-message</module>
 		<module>sara-support</module>
-		<module>sara-web</module>
 		<module>sara-config</module>
 		<module>sara-base</module>
-		<module>sara-we</module>
+		<module>sara-web</module>
 	</modules>
 
 	<properties>
