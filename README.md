@@ -1,4 +1,20 @@
 首先介绍下这个项目，该项目是一个纯净版不掺和任何业务的基础框架项目。
+
+##如何运行成功
+* 直接导入本项目，肯定会各种红感叹号，这是由于本项目依赖了我写的第三方包和第三方插件，而这些官服是没有的，而无论是哪个我都已经提供了源码放入了github中，
+  地址分别是https://github.com/love-somnus/rest-core.git   https://github.com/love-somnus/extract-maven-plugin.git
+  git clone 到本地后，分别进入项目，cmd运行mvn install 命令，安装包到本地仓库，成功后再maven update下sara项目，所有的感叹号都会消失
+* 项目中jdbc目前用的外网mysql已经失效，需要你改成有用的，或者改成你本地的链接（配置在sara-config模块中的env/configurations-dev.properties）
+  然后再运行数据库脚本（在sara-base模块中的META-INF/mybatis/sql）
+* 如果你选择是用tomcat插件启动该项目，那么请直接clean tomcat7:run
+* 如果你是选择手动部署项目到eclipse里的tomcat中，那么你还需要对项目打包一次，命令为 clean package，
+  另外还有一系列的操作请参考我的这篇文章http://blog.csdn.net/lovesomnus/article/details/53215704
+* 当你已经成功启动后，可以通过此链接查看项目是否正常
+  http://localhost:8080/sara/resource/application.wadl
+* 如何测试调用具体接口，请选择使用chrome的postman，firefox的httprequester
+* 如何在后台服务中调用rest风格的服务，可以参考我的另一篇文章 http://blog.csdn.net/lovesomnus/article/details/51164055
+
+
 ## 技术选型
 
 ### 管理
