@@ -2,22 +2,31 @@ package com.somnus.sara.message;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Message implements java.io.Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	//发送系统编号
+	/** 发送系统编号*/
 	@NotEmpty
+	@JsonIgnore
     private String sysCode;
-    //前置机编号
+	
+    /** 前置机编号*/
     @NotEmpty
+    @JsonIgnore
     private String frontNo;
-    //前置机时间
+    
+    /** 前置机时间*/
     @NotEmpty
+    @JsonIgnore
     private String frontTime;
-    //响应码
+    
+    /** 响应码*/
     private String repCode;
-    //响应消息
+    
+    /** 响应消息*/
     private String repMsg;
 
     public String getSysCode() {
