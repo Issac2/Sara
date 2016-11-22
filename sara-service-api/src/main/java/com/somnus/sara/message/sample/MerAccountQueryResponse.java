@@ -2,19 +2,27 @@ package com.somnus.sara.message.sample;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.somnus.sara.message.Message;
 
 public class MerAccountQueryResponse extends Message {
 	
 	private static final long serialVersionUID = 1L;
 	
-	/**当前页码*/
+	/** 当前页码*/
+	@JsonInclude(Include.NON_EMPTY)
 	private int pageNum;
-	/**每页大小*/
+	
+	/** 每页大小*/
+	@JsonInclude(Include.NON_EMPTY)
 	private int pageSize;
-	/**总条数*/
+	
+	/** 总条数*/
+	@JsonInclude(Include.NON_EMPTY)
 	private int rowCount;
-	/**查询结果*/
+	
+	/** 查询结果*/
 	private List<MerAccount> merAccounts;
 	
 	public int getPageNum() {

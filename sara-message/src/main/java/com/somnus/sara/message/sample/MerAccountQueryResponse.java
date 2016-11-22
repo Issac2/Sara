@@ -23,6 +23,7 @@ public class MerAccountQueryResponse extends Message {
 	private int rowCount;
 	
 	/** 查询结果*/
+	@JsonInclude(Include.NON_EMPTY)
 	private List<MerAccount> merAccounts;
 	
 	public int getPageNum() {

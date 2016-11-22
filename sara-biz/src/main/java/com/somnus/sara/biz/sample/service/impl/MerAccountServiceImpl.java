@@ -33,18 +33,15 @@ public class MerAccountServiceImpl implements MerAccountService {
 	private MessageSourceAccessor	msa;
 
 	@Override
-	public MerAccountQueryResponse selectByAcctcode(
-			MerAccountQueryRequest request) {
+	public MerAccountQueryResponse selectByAcctcode(MerAccountQueryRequest request) {
 
 		MerAccountQueryResponse response = new MerAccountQueryResponse();
 
-		PageList<MerAccount> pagelist = merAccountDao.selectByAcctcode(request
-				.getAcctCode(),
+		PageList<MerAccount> pagelist = merAccountDao.selectByAcctcode(request.getAcctCode(),
 				new PageBounds(request.getPageNum(), request.getPageSize()));
 
 		if (pagelist == null) {
-			throw new BizException(msa.getMessage(MsgCodeList.ERROR_505002,
-					new Object[] { request.getAcctCode() }));
+			throw new BizException(msa.getMessage(MsgCodeList.ERROR_505002,new Object[]{request.getAcctCode()}));
 		}
 
 		int total = pagelist.getPaginator().getTotalCount();// 总记录数
@@ -62,8 +59,7 @@ public class MerAccountServiceImpl implements MerAccountService {
 		List<MerAccount> accounts = merAccountDao.selectByAcctcode(acctCode);// 查询交易账户号是否存在
 		// 交易账户号已存在直接返回
 		if (accounts != null && accounts.size() > 0) {
-			log.warn(msa.getMessage(MsgCodeList.ERROR_305003,
-					new Object[] { "merAccCode:".concat(acctCode) }));
+			log.warn(msa.getMessage(MsgCodeList.ERROR_305003,new Object[] { "merAccCode:".concat(acctCode) }));
 			return;
 		}
 
