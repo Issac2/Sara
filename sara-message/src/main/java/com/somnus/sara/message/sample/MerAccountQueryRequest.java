@@ -1,7 +1,5 @@
 package com.somnus.sara.message.sample;
 
-import javax.validation.constraints.NotNull;
-
 import org.hibernate.validator.constraints.NotEmpty;
 
 import com.somnus.sara.message.Message;
@@ -14,11 +12,9 @@ public class MerAccountQueryRequest extends Message {
     private String acctCode;
     
     /**当前页码*/
-    @NotNull
 	private int pageNum;
     
 	/**每页大小*/
-    @NotNull
 	private int pageSize;
     
 	public String getAcctCode() {

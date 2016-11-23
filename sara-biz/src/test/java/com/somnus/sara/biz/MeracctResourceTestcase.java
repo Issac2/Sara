@@ -14,7 +14,7 @@ public class MeracctResourceTestcase extends AbstractTestSupport {
     public void createMeracct() throws Exception {
 		MeracctRequest request = new MeracctRequest();
     	request.setSysCode("test");
-    	request.setFrontNo("test");
+    	request.setFrontName("test");
     	request.setFrontTime("test");
     	
     	request.setAcctCode("1020550026");

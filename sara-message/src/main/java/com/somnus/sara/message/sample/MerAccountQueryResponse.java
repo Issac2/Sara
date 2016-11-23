@@ -11,15 +11,15 @@ public class MerAccountQueryResponse extends Message {
 	private static final long serialVersionUID = 1L;
 	
 	/** 当前页码*/
-	@JsonInclude(Include.NON_EMPTY)
+	@JsonInclude(Include.NON_DEFAULT)
 	private int pageNum;
 	
 	/** 每页大小*/
-	@JsonInclude(Include.NON_EMPTY)
+	@JsonInclude(Include.NON_DEFAULT)
 	private int pageSize;
 	
 	/** 总条数*/
-	@JsonInclude(Include.NON_EMPTY)
+	@JsonInclude(Include.NON_DEFAULT)
 	private int rowCount;
 	
 	/** 查询结果*/

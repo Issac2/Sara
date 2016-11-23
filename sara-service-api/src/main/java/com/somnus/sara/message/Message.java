@@ -2,7 +2,8 @@ package com.somnus.sara.message;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 public class Message implements java.io.Serializable {
 	
@@ -10,17 +11,20 @@ public class Message implements java.io.Serializable {
 	
 	/** 发送系统编号*/
 	@NotEmpty
-	@JsonIgnore
+	/*@JsonIgnore*/
+	@JsonInclude(Include.NON_EMPTY)
     private String sysCode;
 	
     /** 前置机编号*/
     @NotEmpty
-    @JsonIgnore
-    private String frontNo;
+    /*@JsonIgnore*/
+    @JsonInclude(Include.NON_EMPTY)
+    private String frontName;
     
     /** 前置机时间*/
     @NotEmpty
-    @JsonIgnore
+    /*@JsonIgnore*/
+    @JsonInclude(Include.NON_EMPTY)
     private String frontTime;
     
     /** 响应码*/
@@ -61,11 +65,11 @@ public class Message implements java.io.Serializable {
         this.repCode = repCode;
     }
 
-    public String getFrontNo() {
-        return frontNo;
+    public String getFrontName() {
+        return frontName;
     }
 
-    public void setFrontNo(String frontNo) {
-        this.frontNo = frontNo;
+    public void setFrontName(String frontName) {
+        this.frontName = frontName;
     }
 }

@@ -40,8 +40,8 @@ public class MerAccountServiceImpl implements MerAccountService {
 		PageList<MerAccount> pagelist = merAccountDao.selectByAcctcode(request.getAcctCode(),
 				new PageBounds(request.getPageNum(), request.getPageSize()));
 
-		if (pagelist == null) {
-			throw new BizException(msa.getMessage(MsgCodeList.ERROR_505002,new Object[]{request.getAcctCode()}));
+		if (pagelist == null || pagelist.isEmpty()) {
+			throw new BizException(msa.getMessage(MsgCodeList.ERROR_505002,new Object[]{"acctCode:" + request.getAcctCode()}));
 		}
 
 		int total = pagelist.getPaginator().getTotalCount();// 总记录数

@@ -1,7 +1,5 @@
 package com.somnus.sara.support.common;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.Date;
 
 import org.apache.commons.lang3.time.DateFormatUtils;
@@ -105,11 +103,7 @@ public class MessageUtil {
 	public static void createMsg(Message message) {
 		message.setSysCode(BasConstants.DEFAULT_SYSCODE);
 		message.setFrontTime(DateFormatUtils.format(new Date(), "yyyy-MM-dd HH:mm:ss"));
-		try {
-			String hostName = InetAddress.getLocalHost().getHostName();
-			message.setFrontNo(hostName);
-		} catch (UnknownHostException e) {
-			throw new RuntimeException(e);
-		}
+		String hostName = SystemUtil.getLocalHostName();
+		message.setFrontName(hostName);
 	}
 }
