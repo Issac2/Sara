@@ -21,7 +21,7 @@
 		<!-- rest -->
 		<rest.core.version>3.2.0</rest.core.version>
 		<!-- spring -->
-		<spring.version>3.2.5.RELEASE</spring.version>
+		<spring.version>4.1.6.RELEASE</spring.version>
 		<mybatis.paginator.version>1.2.17</mybatis.paginator.version>
 		<!-- mybatis -->
 		<mybatis.version>3.1.1</mybatis.version>

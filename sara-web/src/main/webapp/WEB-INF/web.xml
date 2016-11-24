@@ -4,7 +4,7 @@
 
 	<display-name>sara</display-name>
 	
-	<description>资金存管</description>
+	<description>jersey（jax-rs）实现restful服务</description>
 	
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
