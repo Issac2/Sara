@@ -1,4 +1,4 @@
-package com.somnus.sara.support.common;
+package com.somnus.sara.support.aspect;
 
 import java.util.Set;
 
@@ -15,16 +15,20 @@ import org.hibernate.validator.method.MethodConstraintViolationException;
 import org.hibernate.validator.method.MethodValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.somnus.sara.message.Message;
 
 
 @SuppressWarnings("deprecation")
 @Aspect
-public class ValidationInterceptor {
+@Component
+public class ValidationAspect {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
     /** Match any public methods in a class annotated with @AutoValidating*/
+    @Autowired
     private javax.validation.Validator validator;
 
     @Around("execution(public * *(..)) && @within(org.springframework.validation.annotation.Validated)")
@@ -76,13 +80,5 @@ public class ValidationInterceptor {
             }
         }
         return message;
-    }
-
-    public Validator getValidator() {
-        return validator;
-    }
-
-    public void setValidator(Validator validator) {
-        this.validator = validator;
     }
 }

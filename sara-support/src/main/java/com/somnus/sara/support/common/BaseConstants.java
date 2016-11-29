@@ -1,6 +1,6 @@
 package com.somnus.sara.support.common;
 
-public class BasConstants {
+public class BaseConstants {
 	
 	/**出款标志-风控允许出款*/
 	public final static String MER_ACC_OUT_FLAG01 ="01";

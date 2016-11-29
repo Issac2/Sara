@@ -12,7 +12,4 @@
         </property>
     </bean>
     
-    <bean class="com.somnus.sara.support.common.ValidationInterceptor">
-        <property name="validator" ref="validator"/>
-    </bean>
 </beans>

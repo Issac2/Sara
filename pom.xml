@@ -80,6 +80,7 @@
 		<!-- 目前推荐使用2.3版本，3.0会莫名其妙的pom报错 -->
 		<source.plugin.version>2.3</source.plugin.version>
 		<war.plugin.version>2.3</war.plugin.version>
+		<surefire.plugin.version>2.18.1</surefire.plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jdk.version>1.7</jdk.version>
 	</properties>
@@ -557,6 +558,15 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<!-- 打war包时跳过Test -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${surefire.plugin.version}</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
 			</plugin>
 		</plugins>
 
