@@ -527,7 +527,6 @@
 
 	<!-- 构建管理 -->
 	<build>
-		<finalName>sara</finalName>
 		<!-- 基础插件配置 -->
 		<plugins>
 			<!-- 指定JDK版本和编码 -->
@@ -604,10 +603,10 @@
 					<artifactId>tomcat7-maven-plugin</artifactId>
 					<version>2.2</version>
 					<configuration>
-						<path>/${project.build.finalName}</path>
+						<path>/sara</path>
 						<port>8080</port>
 						<uriEncoding>UTF-8</uriEncoding>
-						<finalName>${project.build.finalName}</finalName>
+						<finalName>sara</finalName>
 						<server>tomcat7</server>
 					</configuration>
 				</plugin>
