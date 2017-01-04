@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.somnus</groupId>
 	<artifactId>sara</artifactId>
@@ -68,7 +68,9 @@
 		<!-- test -->
 		<junit.version>4.11</junit.version>
 		<!-- bean validator -->
-		<hibernate.validator.version>4.3.1.Final</hibernate.validator.version>
+		<hibernate.validator.version>5.3.4.Final</hibernate.validator.version>
+		<!-- EL -->
+		<javax.el.version>2.2.4</javax.el.version>
 		<!-- alibaba -->
 		<alibaba.fastjson.version>1.2.16</alibaba.fastjson.version>
 		<alibaba.druid.version>1.0.25</alibaba.druid.version>
@@ -168,6 +170,10 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>javax.el</artifactId>
 		</dependency>
 
 	</dependencies>
@@ -484,6 +490,12 @@
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-validator</artifactId>
 				<version>${hibernate.validator.version}</version>
+			</dependency>
+			<!-- EL -->
+			<dependency>
+				<groupId>org.glassfish.web</groupId>
+				<artifactId>javax.el</artifactId>
+				<version>${javax.el.version}</version>
 			</dependency>
 
 			<!-- alibaba -->
