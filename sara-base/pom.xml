@@ -7,21 +7,23 @@
 		<artifactId>sara</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+	
+	<groupId>com.somnus.sara</groupId>
 	<artifactId>sara-base</artifactId>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.somnus</groupId>
+			<groupId>com.somnus.sara</groupId>
 			<artifactId>sara-support</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.somnus</groupId>
+			<groupId>com.somnus.sara</groupId>
 			<artifactId>sara-message</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.somnus</groupId>
+			<groupId>com.somnus.sara</groupId>
 			<artifactId>sara-config</artifactId>
 			<version>${project.version}</version>
 			<scope>test</scope>

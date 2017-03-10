@@ -7,6 +7,8 @@
 		<artifactId>sara</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+	
+	<groupId>com.somnus.sara</groupId>
 	<artifactId>sara-service-api</artifactId>
 
 	<properties>
