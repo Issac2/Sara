@@ -54,10 +54,6 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.googlecode.usc</groupId>
-			<artifactId>jdbcdslog</artifactId>
-		</dependency>
 		<!-- 加入cxf-webservice依赖包 -->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
